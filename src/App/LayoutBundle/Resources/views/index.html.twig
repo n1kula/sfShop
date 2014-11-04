@@ -49,13 +49,19 @@
     	<div class="clear"></div>
     	
     	<div id="footer">
-    		{% block footer %}
-                <nav role="navigation" class="blog-nav-item">
-+                
-+                        {{ knp_menu_render('AppLayoutBundle:Builder:footerMenu') }}
-+                
-+            </nav>
-                {% endblock %}
+    {% block footer %}
+        <p>&nbsp;</p>
+                <div class="masthead">
+                    
+                          <ul class="nav nav-justified">
+                              {{ knp_menu_render('AppLayoutBundle:Builder:footerMenu') }}
+                         </ul>
+                   
+                 </div>
+                         
+                          <div class="masthead">
+        
+    {% endblock %}
     	</div>
    	</div>
         

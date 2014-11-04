@@ -36,12 +36,16 @@ class Builder extends ContainerAware
     public function footerMenu(FactoryInterface $factory, array $options)
     {
         $menu = $factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav navbar-nav');
+        $menu->setChildrenAttribute('class', 'nav nav-justified');
 
-        $menu->addChild('Produkty', ['route' => 'product_list']);
-        $menu->addChild('Dodaj nowy Produkt', ['route' => 'product_new']);
-        $menu->addChild('Kategorie', ['route' => 'category']);
-        $menu->addChild('Dodaj nową', ['route' => 'category_new']);
+        $menu->addChild('Produkty', ['route' => 'product_list'])
+                ;
+        $menu->addChild('Dodaj nowy Produkt', ['route' => 'product_new'])
+                ;
+        $menu->addChild('Kategorie', ['route' => 'category'])
+               ;
+        $menu->addChild('Dodaj nową', ['route' => 'category_new'])
+                ;
         
         return $menu;
     }
