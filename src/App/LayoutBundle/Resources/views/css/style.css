@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+
+#side {
+	width: 20%;
+	float: left;
+}
+
+#contest {
+	width: 80%;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
