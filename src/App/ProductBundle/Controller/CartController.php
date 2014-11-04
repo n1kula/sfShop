@@ -29,8 +29,7 @@ class CartController extends Controller
     	
     	$this->get('shop_cart')
     	   ->add($product);
-    	//$cart->add($product, 1);
-    	
+    	    	
     	return $this->redirect($this->generateUrl('cart'));
     }
     

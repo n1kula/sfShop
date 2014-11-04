@@ -20,7 +20,12 @@
     <body>
     <div>
     	<div id="menu">
-    		<a href="{{ path('product_list') }}">Produkty</a>
+    		<nav role="navigation" class="navbar">
+	        <div class="navbar-collapse" id="navbar">
+	            {{ knp_menu_render('AppLayoutBundle:Builder:mainMenu') }}
+	        </div>
+                <div>&nbsp;</div>
+                </nav>
     		
     	</div>
     	
@@ -29,6 +34,8 @@
     	</div>
     	
     	<div id="contest">
+            
+            
                 {% for flashMessage in app.session.flashbag.get('notice') %}
     			<div class="container-fluid">
     				<div class="alert alert-success">
@@ -42,7 +49,13 @@
     	<div class="clear"></div>
     	
     	<div id="footer">
-    		{% block footer %}Footer{% endblock %}
+    		{% block footer %}
+                <nav role="navigation" class="blog-nav-item">
++                
++                        {{ knp_menu_render('AppLayoutBundle:Builder:footerMenu') }}
++                
++            </nav>
+                {% endblock %}
     	</div>
    	</div>
         
