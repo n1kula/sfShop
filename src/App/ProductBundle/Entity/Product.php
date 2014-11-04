@@ -25,27 +25,34 @@ class Product
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=50)
+     * 
+     * @Assert\NotBlank(message="Nazwa produktu nie może być pusta")
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="description", type="text")
      */
     private $description;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="price", type="integer")
+     * @ORM\Column(name="price", type="float")
+     * 
+     * @Assert\NotBlank()
+     * @Assert\GreaterThan(value="0", message="Cena musi być większa od zera")
      */
     private $price;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="amount", type="integer")
+     * @ORM\Column(name="amount", type="integer")     
+     * @Assert\NotBlank()
+     * @Assert\GreaterThan(value="0", message="Cena musi być większa od zera")
      */
     private $amount;
 
