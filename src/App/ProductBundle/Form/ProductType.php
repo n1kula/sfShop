@@ -20,6 +20,7 @@ class ProductType extends AbstractType
             ->add('price')
             ->add('amount')
             ->add('category')
+            ->add('save', 'submit', ['label' => "Zapisz produkt"])
         ;
     }
     

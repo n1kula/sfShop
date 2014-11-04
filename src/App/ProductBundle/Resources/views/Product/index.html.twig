@@ -1,7 +1,37 @@
-{% extends "::base.html.twig" %}
+{% extends "AppLayoutBundle::index.html.twig" %}
 
-{% block title %}AppProductBundle:Product:index{% endblock %}
+{% block title %}Lista Produktów{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Product:index page</h1>
+    <h1>{{ block('title') }}</h1>
+        <a href="{{ path("product_new") }}" class="btn btn-info">Dodaj produkt</a>
+            <table class="table">
+        	<thead>
+		<tr><th>ID</th>
+			<th>Produkt</th>
+			<th>Opis</th>
+			<th>Cena</th>
+			<th>Ilosc</th>
+			<th>Kategoria</th>
+			<th>Akcja</th>
+		</tr>
+		{% for product in products %}
+			<tr>
+				<td>{{ product.id }}</td>
+				<td>{{ product.name }}</td>
+				<td>{{ product.description }}</td>
+				<td>{{ product.price }}</td>
+				<td>{{ product.amount }}</td>
+				<td>{{ product.category }}</td>
+				<td>
+				<a href={{ path('product_edit', {'id': product.id}) }}">[edytuj]</a>
+				<a href={{ path('product_delete', {'id': product.id}) }}">[usun]</a>
+				</td>
+			</tr>			
+		{% endfor %}
+	</thead>
+	<tbody>
+	
+	</tbody>
+</table>
 {% endblock %}

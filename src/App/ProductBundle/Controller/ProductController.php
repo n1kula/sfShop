@@ -3,49 +3,52 @@
 namespace App\ProductBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use App\ProductBundle\Form\ProductType;
 
 class ProductController extends Controller
-{
-    /**
-     * @Route("/")
-     * @Template()
-     */
-    public function indexAction()
+{ 
+     public function indexAction()
     {
-        return array(
-                // ...
-            );    }
+        $products = $this->getDoctrine()
+            ->getRepository('AppProductBundle:Product')
+            ->findAll();
+        
+         return $this->render('AppProductBundle:Product:index.html.twig', array(
+                 'products' => $products
+            ));    
+    }
 
-    /**
-     * @Route("/new")
-     * @Template()
-     */
     public function newAction()
     {
-        return array(
-                // ...
-            );    }
+      	$request = $this->getRequest();
+    	
+    	$form = $this->createForm(new ProductType(),null, []);
+    	
+    	$form->handleRequest($request);
+    	
+    	if ($form->isValid()) {
+    		$product = $form->getData();
+    		$em = $this->getDoctrine()->getManager();
+    		$em->persist($product);
+    		$em->flush();
+    		
+    		return $this->redirect($this->generateUrl('product_list'));
+    	}
+    	
+        return $this->render('AppProductBundle:Product:new.html.twig', array(
+                 'form' => $form->createView()
+            ));    }
 
-    /**
-     * @Route("/edit")
-     * @Template()
-     */
-    public function editAction()
-    {
-        return array(
-                // ...
-            );    }
-
-    /**
-     * @Route("/delete")
-     * @Template()
-     */
     public function deleteAction()
     {
-        return array(
+        return $this->render('AppProductBundle:Product:delete.html.twig', array(
                 // ...
-            );    }
+            ));    }
+
+    public function editAction()
+    {
+        return $this->render('AppProductBundle:Product:edit.html.twig', array(
+                // ...
+            ));    }
 
 }

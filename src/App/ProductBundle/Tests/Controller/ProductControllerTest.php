@@ -20,18 +20,18 @@ class ProductControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/new');
     }
 
-    public function testEdit()
-    {
-        $client = static::createClient();
-
-        $crawler = $client->request('GET', '/edit');
-    }
-
     public function testDelete()
     {
         $client = static::createClient();
 
         $crawler = $client->request('GET', '/delete');
+    }
+
+    public function testEdit()
+    {
+        $client = static::createClient();
+
+        $crawler = $client->request('GET', '/edit');
     }
 
 }

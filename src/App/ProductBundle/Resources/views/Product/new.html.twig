@@ -1,7 +1,11 @@
-{% extends "::base.html.twig" %}
+{% extends "AppLayoutBundle::index.html.twig" %}
 
-{% block title %}AppProductBundle:Product:new{% endblock %}
+{% block title %}Dodaj nowy produkt{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Product:new page</h1>
+
+<h1>{{ block('title') }}</h1>
+
+{{ form(form, {'attr': {'novalidate': 'novalidate', 'role': 'form'}}) }}
+
 {% endblock %}

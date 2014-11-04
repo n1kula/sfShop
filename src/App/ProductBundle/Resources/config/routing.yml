@@ -1,3 +1,15 @@
-app_product_homepage:
+product_list:
     path:     /
-    defaults: { _controller: AppProductBundle:Default:index }
+    defaults: { _controller: AppProductBundle:Product:index }
+
+product_new:
+    path:     /product/new
+    defaults: { _controller: AppProductBundle:Product:new }
+
+product_delete:
+    path:     /product/delete/{id}
+    defaults: { _controller: AppProductBundle:Product:delete }
+
+product_edit:
+    path:     /product/edit/{id}
+    defaults: { _controller: AppProductBundle:Product:edit }
