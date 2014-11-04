@@ -13,3 +13,7 @@ product_delete:
 product_edit:
     path:     /product/edit/{id}
     defaults: { _controller: AppProductBundle:Product:edit }
+
+AppProductBundle_category:
+        resource: "@AppProductBundle/Resources/config/routing/category.yml"
+        prefix:   /category
