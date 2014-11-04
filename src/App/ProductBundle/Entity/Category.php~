@@ -68,45 +68,4 @@ class Category
     {
         return $this->name;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->products = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add products
-     *
-     * @param \App\ProductBundle\Entity\Product $products
-     * @return Category
-     */
-    public function addProduct(\App\ProductBundle\Entity\Product $products)
-    {
-        $this->products[] = $products;
-
-        return $this;
-    }
-
-    /**
-     * Remove products
-     *
-     * @param \App\ProductBundle\Entity\Product $products
-     */
-    public function removeProduct(\App\ProductBundle\Entity\Product $products)
-    {
-        $this->products->removeElement($products);
-    }
-
-    /**
-     * Get products
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getProducts()
-    {
-        return $this->products;
-    }
-    
 }

@@ -55,7 +55,6 @@ class Product
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="products")
      */
     private $category;
-    
     /**
      * Get id
      *
@@ -156,28 +155,5 @@ class Product
     public function getAmount()
     {
         return $this->amount;
-    }
-
-    /**
-     * Set category
-     *
-     * @param \App\ProductBundle\Entity\Category $category
-     * @return Product
-     */
-    public function setCategory(\App\ProductBundle\Entity\Category $category = null)
-    {
-        $this->category = $category;
-
-        return $this;
-    }
-
-    /**
-     * Get category
-     *
-     * @return \App\ProductBundle\Entity\Category 
-     */
-    public function getCategory()
-    {
-        return $this->category;
     }
 }
