@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new App\LayoutBundle\AppLayoutBundle(),
             new Lexik\Bundle\FormFilterBundle\LexikFormFilterBundle(),
             new JordiLlonch\Bundle\CrudGeneratorBundle\JordiLlonchCrudGeneratorBundle(),
+            new App\CartBundle\AppCartBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

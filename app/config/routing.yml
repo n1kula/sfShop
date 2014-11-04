@@ -1,3 +1,7 @@
+app_cart:
+    resource: "@AppCartBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app_layout:
     resource: "@AppLayoutBundle/Resources/config/routing.yml"
     prefix:   /

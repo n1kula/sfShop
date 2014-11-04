@@ -1,0 +1,3 @@
+app_cart_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: AppCartBundle:Default:index }

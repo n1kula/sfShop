@@ -14,6 +14,15 @@ product_edit:
     path:     /product/edit/{id}
     defaults: { _controller: AppProductBundle:Product:edit }
 
+add_to_cart:
+    path:     /add-to-cart/{id}
+    defaults: { _controller: AppProductBundle:Cart:addToCart }
+    
+cart:
+    path: /cart
+    defaults: { _controller: AppProductBundle:Cart:cart }
+    
 AppProductBundle_category:
         resource: "@AppProductBundle/Resources/config/routing/category.yml"
         prefix:   /category
+

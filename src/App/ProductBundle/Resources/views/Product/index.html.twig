@@ -14,6 +14,7 @@
 			<th>Ilosc</th>
 			<th>Kategoria</th>
 			<th>Akcja</th>
+                        <th>asd</th>
 		</tr>
 		{% for product in products %}
 			<tr>
@@ -27,6 +28,7 @@
 				<a href={{ path('product_edit', {'id': product.id}) }}">[edytuj]</a>
 				<a href={{ path('product_delete', {'id': product.id}) }}">[usun]</a>
 				</td>
+                                <td><a href="{{ path("add_to_cart", {'id': product.id}) }}" class="btn btn-info">Dodaj do koszyka</a></td>
 			</tr>			
 		{% endfor %}
 	</thead>
