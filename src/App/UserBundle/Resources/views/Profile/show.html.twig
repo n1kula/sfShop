@@ -1,0 +1,6 @@
+{% extends "AppLayoutBundle::layout_auth.html.twig" %}
+{% block body %}
+{% block fos_user_content %}
+{% include "AppUserBundle:Profile:show_content.html.twig" %}
+{% endblock fos_user_content %}
+{% endblock %}
