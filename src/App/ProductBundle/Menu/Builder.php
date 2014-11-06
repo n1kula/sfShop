@@ -1,6 +1,6 @@
 <?php
 
-namespace App\LayoutBundle\Menu;
+namespace App\ProductBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerAware;
@@ -50,22 +50,6 @@ class Builder extends ContainerAware
 //            'route' => 'contact',
 //        ));
 
-        return $menu;
-    }
-    public function footerMenu(FactoryInterface $factory, array $options)
-    {
-        $menu = $factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav nav-justified');
-
-        $menu->addChild('Produkty', ['route' => 'product_list'])
-                ;
-        $menu->addChild('Dodaj nowy Produkt', ['route' => 'product_new'])
-                ;
-        $menu->addChild('Kategorie', ['route' => 'category'])
-               ;
-        $menu->addChild('Dodaj nową', ['route' => 'category_new'])
-                ;
-        
         return $menu;
     }
 }

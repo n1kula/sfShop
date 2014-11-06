@@ -26,3 +26,6 @@ AppProductBundle_category:
         resource: "@AppProductBundle/Resources/config/routing/category.yml"
         prefix:   /category
 
+show_category:
+    path: /category/{id}
+    defaults: {_controller: ShopProductBundle:Main:showProductInCategory }

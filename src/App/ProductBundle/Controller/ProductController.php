@@ -94,5 +94,16 @@ class ProductController extends Controller
                'form' => $form->createView()
             ));
         }
+    public function showProductInCategoryAction($id)
+    {
+        $products = $this->getDoctrine()
+                ->getRepository('AppProductBundle:Product')
+                ->findBy([
+                    'category' => $id,
+                ]);
         
+        return $this->render('AppProductBundle:Main:product_list.html.twig', array(
+                'products' => $products,        		
+        	));  
+    }
   }
