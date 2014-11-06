@@ -27,5 +27,9 @@ AppProductBundle_category:
         prefix:   /category
 
 show_category:
-    path: /category/{id}
-    defaults: {_controller: ShopProductBundle:Main:showProductInCategory }
+    path: /category/{id}/show
+    defaults: {_controller: AppProductBundle:Product:showProductInCategory }
+    
+contact:
+    path: /contact
+    defaults: {_controller: AppProductBundle:Product:contact }
