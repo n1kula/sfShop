@@ -20,10 +20,12 @@ body {
   margin-bottom: 40px;
 }
 
-footer {
+#footer {
   padding-top: 40px;
   padding-bottom: 40px;
+  text-align: center; 
 }
+
 
 /* Main marketing message and sign up button */
 .jumbotron {
